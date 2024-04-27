@@ -26,7 +26,7 @@ pipeline {
         stage("Build Image"){
             steps{
                 script {
-                    dockerIMg = docker.build ahmedzak7/nodejs2 
+                    dockerIMg = docker.build("ahmedzak7/nodejs2:latest")
                 }
         }
         }
