@@ -29,6 +29,7 @@ pipeline {
                     dockerIMg = docker.build ahmedzak7/nodejs2 
                 }
         }
+        }
         stage('Docker Push') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker_cred', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
