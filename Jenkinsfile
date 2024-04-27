@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        nodejs '22.0.0'
+    }
     stages{
         stage("checkout"){
             steps{
@@ -9,6 +12,7 @@ pipeline {
 
         stage("Test"){
             steps{
+                sh 'npm version'
                 sh 'apt install npm -y'
                 sh 'npm test'
             }
